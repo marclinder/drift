@@ -1,0 +1,25 @@
+{
+  "name": "noise-particle-playground",
+  "version": "1.0.0",
+  "description": "Particle system experimentation",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "dat.gui": "^0.7.9",
+    "pixi.js": "^8.9.1",
+    "simplex-noise": "^4.0.3",
+    "stats.js": "^0.17.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/dat.gui": "^0.7.13",
+    "@types/stats.js": "^0.17.3",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.2"
+  }
+}
