@@ -20,7 +20,7 @@ export class ParticleSystem {
   private particles: Particle[] = [];
   private emitterAngle = 0;
 
-  
+
   /**
    * Creates an instance of ParticleSystem.
    * @param {Stats} stats
@@ -51,6 +51,9 @@ export class ParticleSystem {
     await this.app.init({
       resizeTo: window,
       antialias: true,
+      powerPreference: 'high-performance',
+      resolution: window.devicePixelRatio,
+      autoDensity: true,
     });
     this.app.stage.addChild(this.particleContainer);
     this.app.ticker.add(this.update.bind(this));
@@ -78,7 +81,7 @@ export class ParticleSystem {
       this.addParticle(p);
     }
   }
-  
+
   /**
    * Adds a particle to the system.
    *
@@ -102,7 +105,7 @@ export class ParticleSystem {
     this.particleContainer.removeChild(particle.sprite);
     this.particles.splice(this.particles.indexOf(particle), 1);
   }
-  
+
   /**
    *  Updates the particle system.
    *
