@@ -24,7 +24,6 @@ export class Mouse {
      * @memberof Mouse
      */
     private addListeners() {
-        // === 4. MOUSE INTERACTION ===
         window.addEventListener('mousemove', (e) => {
             Mouse.x = e.clientX;
             Mouse.y = e.clientY;

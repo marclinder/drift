@@ -1,5 +1,10 @@
 /**
- * Maps a speed value (0 to max) to a visible color using HSL.
+ * Maps a speed value to a color in the HSL spectrum.
+ *
+ * @export
+ * @param {number} speed
+ * @param {number} [maxSpeed=10]
+ * @return {*}  {number}
  */
 export function speedToColor(speed: number, maxSpeed = 10): number {
   const normalized = Math.min(speed / maxSpeed, 1);
@@ -8,7 +13,12 @@ export function speedToColor(speed: number, maxSpeed = 10): number {
 }
 
 /**
- * Converts HSL to hex color for PixiJS tinting.
+ * Converts HSL (Hue, Saturation, Lightness) values to a 24-bit hexadecimal color integer.
+ *
+ * @param {number} h
+ * @param {number} s
+ * @param {number} l
+ * @return {*}  {number}
  */
 function hslToHex(h: number, s: number, l: number): number {
   h /= 360;
@@ -39,7 +49,6 @@ function hslToHex(h: number, s: number, l: number): number {
 
   return rgbToHexInt(r, g, b);
 }
-
 
 /**
  * Converts normalized RGB values (range 0–1) to a single 24-bit hexadecimal color integer.

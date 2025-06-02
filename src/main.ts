@@ -8,7 +8,8 @@ stats.showPanel(0);
 document.body.appendChild(stats.dom);
 
 const gui = new dat.GUI();
-gui.add(config, 'noiseScale', 0.00001, 0.01, 0.00001);
-gui.add(config, 'noiseStrength', 0.1, 5.0, 0.1);
+gui.add(config, 'noiseScale', 0.00001, 0.001, 0.000001);
+gui.add(config, 'noiseStrength', 0.1, 15.0, 0.1);
+// gui.hide();
 
 const particleSystem = new ParticleSystem(stats);

@@ -68,7 +68,7 @@ export class ParticleSystem {
     const maxParticles = 10000 - this.particles.length;
     const cols = Math.ceil(Math.sqrt(maxParticles));
     const rows = Math.ceil(maxParticles / cols);
-    const spacing = config.particleSize * 14;
+    const spacing = config.particleSpacing;
     const startX = (this.app.screen.width - cols * spacing) / 2;
     const startY = (this.app.screen.height - rows * spacing) / 2;
     for (let i = 0; i < maxParticles; i++) {
@@ -114,7 +114,8 @@ export class ParticleSystem {
       const angle = this.noise.getAngle(p.sprite.x + this.emitterAngle, p.sprite.y + this.emitterAngle, config.noiseScale);
       p.update(angle);
     }
-    this.emitterAngle += 1; // tweak this to change rotation speed
+    // this.emitterAngle += 1; // tweak this to change rotation speed
+    this.emitterAngle += config.noiseStrength; // tweak this to change rotation speed
     this.stats.end();
   }
 
